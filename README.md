@@ -5,4 +5,5 @@ Of note there are lots of other great collections of dockerflies such as:
 
 - Jess's: [jfrazele/dockerfiles](https://github.com/jfrazelle/dockerfiles)
 - Sven's: [SvenDowideit/dockerfiles](https://github.com/svendowideit/dockerfiles)
+- Kev++'s: [vimagick/dockerfiles](https://github.com/vimagick/dockerfiles)
 
