@@ -1,4 +1,4 @@
-FROM haskell:7.10
+FROM haskell:7.10.3
 RUN	apt-get update && apt-get install -y \
 	 libgtksourceview-3.0-dev \
 	 libwebkitgtk-3.0-dev \
