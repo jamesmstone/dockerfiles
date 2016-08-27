@@ -1,4 +1,4 @@
-FROM haskell
+FROM haskell:7.10
 RUN	apt-get update && apt-get install -y \
 	 libgtksourceview-3.0-dev \
 	 libwebkitgtk-3.0-dev \
@@ -9,5 +9,5 @@ RUN	apt-get update && apt-get install -y \
 	cabal install Cabal cabal-install && \
 	cabal update && \
 	cabal install alex happy gtk2hs-buildtools && \
-	cabal install leksah --allow-newer
+	cabal install leksah
 ENTRYPOINT ["leksah"]
