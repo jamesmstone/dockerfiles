@@ -8,6 +8,5 @@ RUN	apt-get update && apt-get install -y \
 	cabal update && \
 	cabal install Cabal cabal-install && \
 	cabal update && \
-	cabal install alex happy gtk2hs-buildtools && \
-	cabal install leksah
+	cabal install alex happy gtk2hs-buildtools leksah
 ENTRYPOINT ["leksah"]
