@@ -1,62 +1,31 @@
-# Docker image for IntelliJ IDEA Ultimate, Go and Go plugin
+# Docker image for IntelliJ IDEA Ultimate.
 [![Build Status](https://travis-ci.org/jamesmstone/dockerfiles.svg?branch=master)](https://travis-ci.org/jamesmstone/dockerfiles) [![Docker Pulls](https://img.shields.io/docker/pulls/jamesmstone/idea-ultimate.svg?maxAge=2592000)](https://hub.docker.com/r/jamesmstone/idea-ultimate/)
-> **Note:** This is a fork from the original: [dlsniper](https://github.com/dlsniper/)/[docker-intellij](https://github.com/dlsniper/docker-intellij). I made this fork as I was after a version that used the ultimate edition.
+> **Note:** This is a fork from the original: [dlsniper](https://github.com/dlsniper/)/[docker-intellij](https://github.com/dlsniper/docker-intellij). I made this fork as I was after a version that used the ultimate edition additionally, as I was after as small and fully customizable container this doesn't come with any pre-installed plugins. However, if you mount the `config` dir you can have plugins you download in one session transfer to the next.
 
 The image contains the following software:
 
-- [IntelliJ IDEA Ultimate 2016.1.3](https://www.jetbrains.com/idea/)
-- [Go 1.6.2](https://golang.org/)
-- [Go plugin (nightly, 0.11.1474)](https://plugins.jetbrains.com/plugin/5047)
-- [Markdown plugin (release, 2016.1.20160405)](https://plugins.jetbrains.com/plugin/7793)
+- [IntelliJ IDEA Ultimate 2016.1.4](https://www.jetbrains.com/idea/)
+
 
 ## Running
-
-**Note:** As of Docker 1.10(?) you need to specify full paths for volumes. A workaround is using `"$(pwd)"` as the mount point.
 
 By running the following command you'll be able to start the container
 
 ```bash
-docker run -tdi \
+docker run --rm -it \
            --net="host" \
            --privileged=true \
            -e DISPLAY=${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -v ${HOME}/.IdeaIC2016.1_docker:/home/developer/.IdeaIC2016.1 \
-           -v ${GOPATH}:/home/developer/go \
+           -v ${HOME}/.config/idea:/config \
+           -v "$(pwd)":/home/root \
            jamesmstone/idea-ultimate
 ```
 
 The command will do the following:
 
-- save the IDE preferences into `<your-HOME-dir>/.IdeaIC2016.1_docker`
-- mounts the GOPATH from your computer to the one in the container. This
-assumes you have a single directory. If you have multiple directories in your
-GOPATH, then see below how you can customize this to run correctly.
-
-## Customizing the container
-
-You can replace the `${GOPATH}` environment variable to a hardcoded path that
-you have in your directory.
-
-You can also choose to save the preferences in another directory.
-
-For an example script to launch this, see below:
-
-```bash
-#!/usr/bin/env bash
-
-GOPATH=/path/to/your/GOPATH
-PREF_DIR=${HOME}/.IdeaIC2016.1_docker
-
-docker run -tdi \
-           --net="host" \
-           --privileged=true \
-           -e DISPLAY=${DISPLAY} \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -v ${PREF_DIR}:/home/developer/.IdeaIC2016.1 \
-           -v ${GOPATH}:/home/developer/go \
-           jamesmstone/idea-ultimate
-```
+- save the IDE preferences into `<your-HOME-dir>/.config/idea`
+- loads the current dir into the home directory of the current (root) user in the container.
 
 ## Updating the container
 
