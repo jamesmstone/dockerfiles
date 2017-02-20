@@ -1,7 +1,4 @@
-	
-	
-	
-FROM	openjdk:8-jdk
+FROM	openjdk:latest
 MAINTAINER	James Stone
 ADD	https://download.jetbrains.com/idea/ideaIU-2016.2.5.tar.gz /tmp/intellij.tar.gz
 RUN	mkdir -p /config \
