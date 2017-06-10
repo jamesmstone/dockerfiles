@@ -1,7 +1,3 @@
-
-	
-	
-	
 FROM	kalilinux/kali-linux-docker
 MAINTAINER	James Stone
 
