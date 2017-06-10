@@ -1,7 +1,3 @@
-	
-	
-	
-	
 FROM	debian:latest
 MAINTAINER	James Stone
 
