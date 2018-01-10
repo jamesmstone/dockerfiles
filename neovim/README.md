@@ -3,8 +3,8 @@
 
 A dockerised version of neovim
 ## Usage
-`docker run --rm -v "$(pwd)":/wd -w /wd jamesmstone/neovim`
+`docker run -it --rm -v "$(pwd)":/wd -w /wd jamesmstone/neovim`
 
-Alternatively, you can add `alias nvim="docker run --rm -v "$(pwd)":/wd -w /wd jamesmstone/neovim"` to your .bashrc or similar.
+Alternatively, you can add `alias nvim="docker run -it --rm -v "$(pwd)":/wd -w /wd jamesmstone/neovim"` to your .bashrc or similar.
 
 Inspired by work done here: https://hub.docker.com/r/kr1sp1n/alpine-neovim/
