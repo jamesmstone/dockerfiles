@@ -19,7 +19,7 @@ run: ## Run a Dockerfile from the command at the top of the file (ex. DIR=telnet
 	@:$(call check_defined, DIR, directory of the Dockefile)
 	@$(CURDIR)/run.sh "$(DIR)"
 
-REGISTRY := r.j3ss.co
+REGISTRY := hub.docker.com
 .PHONY: image
 image: ## Build a Dockerfile (ex. DIR=telnet).
 	@:$(call check_defined, DIR, directory of the Dockefile)

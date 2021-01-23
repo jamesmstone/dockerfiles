@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 
 SCRIPT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
-REPO_URL="${REPO_URL:-r.j3ss.co}"
+REPO_URL="${REPO_URL:-jamesmstone}"
 JOBS=${JOBS:-2}
 
 ERRORS="$(pwd)/errors"
