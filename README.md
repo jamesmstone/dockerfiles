@@ -1,6 +1,6 @@
 # Dockerfiles
 
-[![Build Status](https://travis-ci.org/jamesmstone/dockerfiles.svg?branch=master)](https://travis-ci.org/jamesmstone/dockerfiles)
+![make test](https://github.com/jamesmstone/dockerfiles/workflows/make%20test/badge.svg)
 
 A collection of dockerfiles I have made for different applications.
 
